@@ -1,0 +1,183 @@
+@import '../node_modules/bootstrap/scss/bootstrap.scss'; // import bootstrap
+
+$normal: hsl(58, 22%, 70%);
+$fire: hsl(26, 85%, 70%);
+$water: hsl(221, 82%, 70%);
+$electric: hsl(48, 93%, 70%);
+$grass: hsl(98, 52%, 70%);
+$ice: hsl(177, 47%, 70%);
+$fighting: hsl(2, 66%, 70%);
+$poison: hsl(301, 45%, 70%);
+$ground: hsl(43, 68%, 70%);
+$flying: hsl(256, 81%, 70%);
+$psychic: hsl(342, 70%, 70%);
+$bug: hsl(67, 75%, 70%);
+$rock: hsl(50, 54%, 70%);
+$ghost: hsl(266, 27%, 70%);
+$dragon: hsl(257, 97%, 70%);
+$dark: hsl(24, 23%, 70%);
+$steel: hsl(240, 19%, 70%);
+$fairy: hsl(330, 50%, 70%);
+
+.normal {
+    background-color: $normal;
+    color: $normal;
+}
+.normal-grad {
+    background-image: linear-gradient(0deg, #ffffff 0%, $normal 100%);
+    background-color: #ffffff;
+}
+
+.fire {
+    background-color: $fire;
+    color: $fire;
+}
+.fire-grad {
+    background-image: linear-gradient(0deg, #ffffff 0%, $fire 100%);
+    background-color: #ffffff;
+}
+
+.water {
+    background-color: $water;
+    color: $water;
+}
+.water-grad {
+    background-image: linear-gradient(0deg, #ffffff 0%, $water 100%);
+    background-color: #ffffff;
+}
+
+.electric {
+    background-color: $electric;
+    color: $electric;
+}
+.electric-grad {
+    background-image: linear-gradient(0deg, #ffffff 0%, $electric 100%);
+    background-color: #ffffff;
+}
+
+.grass {
+    background-color: $grass;
+    color: $grass;
+}
+.grass-grad {
+    background-image: linear-gradient(0deg, #ffffff 0%, $grass 100%);
+    background-color: #ffffff;
+}
+
+.ice {
+    background-color: $ice;
+    color: $ice;
+}
+.ice-grad {
+    background-image: linear-gradient(0deg, #ffffff 0%, $ice 100%);
+    background-color: #ffffff;
+}
+
+.fighting {
+    background-color: $fighting;
+    color: $fighting;
+}
+.fighting-grad {
+    background-image: linear-gradient(0deg, #ffffff 0%, $fighting 100%);
+    background-color: #ffffff;
+}
+
+.poison {
+    background-color: $poison;
+    color: $poison;
+}
+.poison-grad {
+    background-image: linear-gradient(0deg, #ffffff 0%, $poison 100%);
+    background-color: #ffffff;
+}
+
+.ground {
+    background-color: $ground;
+    color: $ground;
+}
+.ground-grad {
+    background-image: linear-gradient(0deg, #ffffff 0%, $ground 100%);
+    background-color: #ffffff;
+}
+
+.flying {
+    background-color: $flying;
+    color: $flying;
+}
+.flying-grad {
+    background-image: linear-gradient(0deg, #ffffff 0%, $flying 100%);
+    background-color: #ffffff;
+
+}
+
+.psychic {
+    background-color: $psychic;
+    color: $psychic;
+}
+.psychic-grad {
+    background-image: linear-gradient(0deg, #ffffff 0%, $psychic 100%);
+    background-color: #ffffff;
+}
+
+.bug {
+    background-color: $bug;
+    color: $bug;
+}
+.bug-grad {
+    background-image: linear-gradient(0deg, #ffffff 0%, $bug 100%);
+    background-color: #ffffff;
+}
+
+.rock {
+    background-color: $rock;
+    color: $rock;
+}
+.rock-grad {
+    background-image: linear-gradient(0deg, #ffffff 0%, $normal 100%);
+    background-color: #ffffff;
+}
+
+.ghost {
+    background-color: $ghost;
+    color: $ghost;
+}
+.ghost-grad {
+    background-image: linear-gradient(0deg, #ffffff 0%, $ghost 100%);
+    background-color: #ffffff;
+}
+
+.dragon {
+    background-color: $dragon;
+    color: $dragon;
+}
+.dragon-grad {
+    background-image: linear-gradient(0deg, #ffffff 0%, $dragon 100%);
+    background-color: #ffffff;
+}
+
+.dark {
+    background-color: $dark;
+    color: $dark;
+}
+.dark-grad {
+    background-image: linear-gradient(0deg, #ffffff 0%, $dark 100%);
+    background-color: #ffffff;
+}
+
+.steel {
+    background-color: $steel;
+    color: $steel;
+}
+.steel-grad {
+    background-image: linear-gradient(0deg, #ffffff 0%, $normal 100%);
+    background-color: #ffffff;
+}
+
+.fairy {
+    background-color: $fairy;
+    color: $fairy;
+}
+.fairy-grad {
+    background-image: linear-gradient(0deg, #ffffff 0%, $fairy 100%);
+    background-color: #ffffff;
+}

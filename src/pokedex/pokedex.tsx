@@ -1,40 +1,72 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { json } from 'stream/consumers';
+import { useHistory } from 'react-router-dom';
 import { PokemonDetail } from '../pokemon/interfaces/pokemonDetails';
 import { getPokemonDetails } from '../pokemon/services/getPokemonDetails';
-import { listPokemon, PokemonListInterface } from '../pokemon/services/listPokemon';
+import { listPokemon } from '../pokemon/services/listPokemon';
+
+import './cardsListPokemon.scss';
+import { leftZeros } from './services/leftZero';
 
 interface PokedexProps {
     
 }
 
 const Pokedex: React.FC<PokedexProps> = () => {
-    const [pokemon, setPokemon] = useState<PokemonListInterface[]>([]);
-    const [selectedPokemon, setSelectedPokemon] = useState<PokemonListInterface | undefined>(undefined);
-    const [selectedPokemonDetails, setSelectedPokemonDetails] = useState<PokemonDetail | undefined>(undefined);
+    const [pokemon, setPokemon] = useState<PokemonDetail[]>([]);
+    const [selectedPokemon, setSelectedPokemon] = useState<PokemonDetail | undefined>(undefined);
+    const history = useHistory();
     
     useEffect(() => {
-        listPokemon().then(response => setPokemon(response.results))
+        listPokemon(151).then(response => setPokemon(response.results))
     }, []);
 
-    useEffect(() => {
-        if (!selectedPokemon) return;
-
-        getPokemonDetails(selectedPokemon.name)
-        .then(response => setSelectedPokemonDetails(response))
-    }, [selectedPokemon]);
+    function handleClick(name: string) {
+        history.push(`/pokemon/${name}`)
+    }
 
     return (
-        <div>
-            <h1>Pokedex</h1>
+        <div id='pokedex'>
+            <div className='w-100 d-flex flex-wrap justify-content-around'>
+                {pokemon.map(pokemon => {
 
-            {pokemon.map(pokemon => <button onClick={() => setSelectedPokemon(pokemon)}>{pokemon.name}</button>)}
+                    let nameUpper: string | string[] = pokemon.name;
+                    nameUpper = nameUpper.split('');
+                    let firstLetter = nameUpper.shift()!;
+                    firstLetter = firstLetter.toUpperCase();
+                    nameUpper.unshift(firstLetter);
 
-            <h2>Pokémon selecionado: {selectedPokemon?.name || 'Nenhum Pokémon selecionado'}</h2>
-            {JSON.stringify(selectedPokemonDetails, undefined, 2)}
+                    return (
+                        <div className='pokemonCard mt-4' onClick={() => handleClick(pokemon.name)}>
+                            <div className={`cardTop ${pokemon.types['0'].type.name}-grad p-0 m-0`}>
+                                <div className='fill w-100 h-100 row p-0 m-0'>
+                                    <div className={`w-25 h-100 p-0 m-0 d-flex justify-content-center align-items-start ${pokemon.types['0'].type.name} num`}>#{leftZeros(pokemon.id, 3)}</div>
+                                    <div className='w-50 h-100 p-0 m-0 d-flex justify-content-center align-items-center'>
+                                        <figure className='m-0'>
+                                            <img className='w-100 h-100' src={`${pokemon.sprites.other?.['official-artwork'].front_default}`} alt='poke'/>
+                                        </figure>
+                                    </div>
+                                    <div className='w-25 h-100 p-0 m-0'></div>
+                                </div>
+                            </div>
+                            <div className='cardBottom'>
+                                <div className='h-50 row p-0 m-0 name d-flex justify-content-center align-items-center'>
+                                    {nameUpper}
+                                </div>
+                                <div className='h-50 row p-0 m-0 d-flex justify-content-center align-items-center'>
+                                    {pokemon.types.map(type => {
+                                        return (
+                                            <span className={`${type.type.name} d-flex justify-content-center align-items-center mx-1`}>{type.type.name.toUpperCase()}</span>
+                                        )
+                                    })}
+                                </div>
+                            </div>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     );
 };
+
 
 export default Pokedex;

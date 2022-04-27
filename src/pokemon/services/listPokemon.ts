@@ -1,4 +1,6 @@
 import axios from "axios";
+import { PokemonDetail } from "../interfaces/pokemonDetails";
+import { getPokemonDetails } from "./getPokemonDetails";
 
 export interface PokemonListInterface {
     name: string;
@@ -9,13 +11,19 @@ interface ListPokemonInterface {
     count: number;
     next: null | string;
     previous: null | string;
-    results: PokemonListInterface[]
+    results: PokemonDetail[]
 }
 
-export async function listPokemon(): Promise<ListPokemonInterface> {
-    const endpoint = `${process.env.REACT_APP_POKEAPI}/pokemon?limit=151&offset=0`;
+export async function listPokemon(num: number): Promise<ListPokemonInterface> {
+    const endpoint = `${process.env.REACT_APP_POKEAPI}/pokemon?limit=${num}&offset=0`;
 
     const response = await axios.get<ListPokemonInterface>(endpoint);
 
-    return response.data;
+    const promiseArr = response.data.results.map(({name}) => getPokemonDetails(name));
+    const resultsPromise = await Promise.all(promiseArr)
+
+    return {
+        ...response.data,
+        results: resultsPromise
+    };
 }

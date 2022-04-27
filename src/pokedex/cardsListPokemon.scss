@@ -1,0 +1,70 @@
+@import '../variables.scss';
+
+#pokedex {
+    // width: 60%;
+    .card {
+        border: 5px solid black;
+        background-color: aqua;
+    }
+    
+    .teste {
+        width: 20rem;
+        height: 20rem;
+        background-color: #000000;
+    }
+
+    .pokemonCard {
+        width: 19rem;
+        height: 12rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 12px -5px;
+        .cardTop {
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            height: 70%;
+            width: 100%;
+            .fill {
+                background-image: url("../assets/img/pokeball.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position-x: 120px;
+                background-position-y: 20px;
+                .num {
+                    background-color: transparent;
+                    font-size: 1.6rem;
+                    font-weight: bolder;
+                }
+
+                figure {
+                    width: 90%;
+                }
+            }
+        }
+        .cardBottom {
+            height: 30%;
+            width: 100%;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            
+            .name {
+                font-size: 1.1rem;
+                font-weight: bold;
+            }
+
+            span {
+                filter: saturate(200%);
+                color: #ffffff;
+                width: 4rem;
+                height: 1.3rem;
+                border-radius: 0.3rem;
+                font-size: 0.8rem;
+            }
+        }
+        &:hover {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+            box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
+            cursor: pointer;
+        }
+    }
+}
