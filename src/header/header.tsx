@@ -16,7 +16,6 @@ const Header: React.FC<HeaderProps> = () => {
     return (
         <header className='d-flex justify-content-around align-items-center'>
             <h1>Pokédex</h1>
-            <input type="search" placeholder='Buscar por nome ou n°' value={search} onChange={ev => setSearch(ev.target.value)} />
         </header>
     );
 };

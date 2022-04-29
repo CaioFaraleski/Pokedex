@@ -1,5 +1,31 @@
-#pokemonImg {
-    margin: 0;
-    padding: 0;
-    width: 40%;
+.vh {
+    height: 100vh;
+    .pokemonImg {
+        margin: 0;
+        padding: 0;
+        width: 40%;
+    }
+    
+    .pokeDetails {
+        width: 40%;
+        .type {
+            height: 1.8rem;
+            font-size: 0.9rem;
+            border-radius: 0.3rem;
+            width: 40%;
+            color: #ffffff;
+        }
+        .big {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .min {
+            min-height: 2.5rem;
+            border-bottom: #888888 1px solid;
+        }
+        .title {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+    }
 }
