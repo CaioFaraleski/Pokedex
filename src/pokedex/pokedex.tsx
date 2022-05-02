@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { PokemonDetail } from '../pokemon/interfaces/pokemonDetails';
-import { getPokemonDetails } from '../pokemon/services/getPokemonDetails';
 import { listPokemon } from '../pokemon/services/listPokemon';
 
 import './cardsListPokemon.scss';
@@ -13,7 +12,6 @@ interface PokedexProps {
 
 const Pokedex: React.FC<PokedexProps> = () => {
     const [pokemon, setPokemon] = useState<PokemonDetail[]>([]);
-    const [selectedPokemon, setSelectedPokemon] = useState<PokemonDetail | undefined>(undefined);
     const history = useHistory();
     
     useEffect(() => {
