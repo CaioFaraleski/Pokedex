@@ -17,7 +17,7 @@ const Pokedex: React.FC<PokedexProps> = () => {
     const history = useHistory();
     
     useEffect(() => {
-        listPokemon(151).then(response => setPokemon(response.results))
+        listPokemon(898).then(response => setPokemon(response.results))
     }, []);
 
     function handleClick(name: string) {
