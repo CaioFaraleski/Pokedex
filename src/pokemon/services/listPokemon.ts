@@ -14,8 +14,8 @@ interface ListPokemonInterface {
     results: PokemonDetail[]
 }
 
-export async function listPokemon(num: number): Promise<ListPokemonInterface> {
-    const endpoint = `${process.env.REACT_APP_POKEAPI}/pokemon?limit=${num}&offset=0`;
+export async function listPokemon(num: number, numOff = 0): Promise<ListPokemonInterface> {
+    const endpoint = `${process.env.REACT_APP_POKEAPI}/pokemon?limit=${num}&offset=${numOff}`;
 
     const response = await axios.get<ListPokemonInterface>(endpoint);
 

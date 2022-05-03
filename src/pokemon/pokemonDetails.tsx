@@ -19,7 +19,7 @@ const PokemonDetails: React.FC<PokemonDetailsProps> = () => {
     const [selectedPokemonDetails, setSelectedPokemonDetails] = useState<PokemonDetail | undefined>(undefined);
     
     useEffect(() => {
-        listPokemon(20000).then(response => setPokemon(response.results))
+        listPokemon(1000, 898).then(response => setPokemon(response.results))
     }, []);
 
     let outOfPokedex = pokemon.map(poke => {
