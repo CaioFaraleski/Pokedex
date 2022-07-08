@@ -1,8 +1,8 @@
 ## Pokédex
 
-<img href="" />![Preview-Screens](./img-readme.png)
+<img href="" />![Preview-Screens](./src/assets/img/pokedex-page.PNG)
 
-Se você quiser ver o projeto funcionando [clique aqui](https://pokedex-caio.herokuapp.com/).
+Se você quiser ver o projeto funcionando [CLIQUE AQUI](https://pokedex-caio.herokuapp.com/).
 
 ## Sobre o projeto
 
